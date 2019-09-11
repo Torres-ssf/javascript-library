@@ -8,7 +8,6 @@ function Book(title, author,pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-
 }
 
 //  Database
@@ -17,7 +16,7 @@ const db = () => {
         return localStorage.setItem(key,value)
     };
 
-    const getData = async (dbKey) =>{
+    const getData = async (dbKey) => {
         let data = await localStorage.getItem(dbKey);
         return data
     };
@@ -25,17 +24,11 @@ const db = () => {
 };
 
 let bookOne = new Book("Batman", "Sergio", 40, false);
-let bookTwo= new Book("Superman", "Isaac", 40, false);
+let bookTwo = new Book("Superman", "Isaac", 40, false);
 
 library.push([bookOne,bookTwo]);
 // Add data to database
 
 db().store("library",JSON.stringify(library.flat()));
 
-
-
-
-
-
-
-
+export default library;

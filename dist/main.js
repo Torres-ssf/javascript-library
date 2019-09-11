@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/display_library.js":
+/*!********************************!*\
+  !*** ./src/display_library.js ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _library_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./library.js */ \"./src/library.js\");\n\n\n// Display logic\nfunction render() {\n  const container = document.getElementById(\"lib-container\");\n  _library_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].flat().map((book, i) => {\n    let ul = document.createElement('ul');\n    let li = document.createElement('li');\n    li.innerHTML = `<p>Title: ${book.title}</p> <p>Author: ${book.author}</p> <p>Pages: ${book.pages}</p> <p>Finished: ${book.read}</p>`;\n    ul.appendChild(li);\n    container.appendChild(ul);\n  });\n}\n\nrender();\n\n\n//# sourceURL=webpack:///./src/display_library.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -94,7 +106,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _library__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./library */ \"./src/library.js\");\n/* harmony import */ var _library__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_library__WEBPACK_IMPORTED_MODULE_0__);\nconsole.log(\"I am up and running\")\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _library__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./library */ \"./src/library.js\");\n/* harmony import */ var _display_library__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./display_library */ \"./src/display_library.js\");\nconsole.log(\"I am up and running\")\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -102,10 +114,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib
 /*!************************!*\
   !*** ./src/library.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("console.log('library is working now');\n\nlet library = [];\n\n// console.log(library);\nfunction Book(title, author,pages, read) {\n    this.title = title;\n    this.author = author;\n    this.pages = pages;\n    this.read = read;\n\n}\n\n//  Database\nconst db = () => {\n    const  store = (key,value) => {\n        return localStorage.setItem(key,value)\n    };\n\n    const getData = async (dbKey) =>{\n        let data = await localStorage.getItem(dbKey);\n        return data\n    };\n    return {store, getData}\n};\n\nlet bookOne = new Book(\"Batman\", \"Sergio\", 40, false);\nlet bookTwo= new Book(\"Superman\", \"Isaac\", 40, false);\n\nlibrary.push([bookOne,bookTwo]);\n// Add data to database\n\ndb().store(\"library\",JSON.stringify(library.flat()));\n\n\n\n\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/library.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconsole.log('library is working now');\n\nlet library = [];\n\n// console.log(library);\nfunction Book(title, author,pages, read) {\n    this.title = title;\n    this.author = author;\n    this.pages = pages;\n    this.read = read;\n}\n\n//  Database\nconst db = () => {\n    const  store = (key,value) => {\n        return localStorage.setItem(key,value)\n    };\n\n    const getData = async (dbKey) => {\n        let data = await localStorage.getItem(dbKey);\n        return data\n    };\n    return {store, getData}\n};\n\nlet bookOne = new Book(\"Batman\", \"Sergio\", 40, false);\nlet bookTwo = new Book(\"Superman\", \"Isaac\", 40, false);\n\nlibrary.push([bookOne,bookTwo]);\n// Add data to database\n\ndb().store(\"library\",JSON.stringify(library.flat()));\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (library);\n\n\n//# sourceURL=webpack:///./src/library.js?");
 
 /***/ })
 
