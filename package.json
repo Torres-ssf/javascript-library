@@ -1,0 +1,31 @@
+{
+  "name": "javascript-library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss/main.scss -o css",
+    "server": "live-server",
+    "dev": "nodemon --watch src --exec webpack --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Torres-ssf/javascript-library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Torres-ssf/javascript-library/issues"
+  },
+  "homepage": "https://github.com/Torres-ssf/javascript-library#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.2",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8"
+  }
+}
