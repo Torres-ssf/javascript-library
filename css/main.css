@@ -14,3 +14,6 @@
 input, label {
   display: block;
   margin: 1em; }
+
+li {
+  list-style: none; }
