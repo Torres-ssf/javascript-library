@@ -1,7 +1,8 @@
 linters:
     flake8:
     eslint:
-        config: './eslint.config'
+        config: './eslint.config',
+        fixer: true
     csslint:
 files:
     ignore:
