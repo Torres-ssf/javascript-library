@@ -11,12 +11,6 @@ formButton.onclick  =  () => {
 
 };
 
-// Get all inputs fields from the form
-// Add all the to Book object
-/// Add to library Array
-// Save the library to database
-// and the we are cool!
-
 function handleForm() {
   let title = document.getElementById('title').value;
   let author = document.getElementById('author').value;

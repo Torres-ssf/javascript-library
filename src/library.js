@@ -2,7 +2,6 @@ console.log('library is working now');
 
 const library = [];
 
-// console.log(library);
 export function Book(title, author,pages, read) {
     this.title = title;
     this.author = author;
@@ -30,7 +29,6 @@ const db = () => {
 };
 
 // display library
-
 export function render(data) {
     const container = document.getElementById("lib-container");
     let ul = document.createElement('ul');
@@ -42,10 +40,11 @@ export function render(data) {
         let editButton = document.createElement('button');
         editButton.setAttribute('id','toggle-read');
         editButton.innerText = "Read";
-        editButton.onclick = (e) =>{
+        editButton.onclick = (e) => editBook(e);
 
-            editBook(e)
-        };
+        let deleteButton = document.createElement('button');
+        deleteButton.innerText = "Delete";
+        deleteButton.onclick = (e) => deleteBook(e);
 
         li.setAttribute('data-book-index',i)
         li.innerHTML = `<p>Title: ${book.title}</p>
@@ -55,6 +54,7 @@ export function render(data) {
                         `;
 
         li.appendChild(editButton);
+        li.appendChild(deleteButton);
         ul.appendChild(li);
         container.appendChild(ul);
     });
@@ -71,24 +71,26 @@ const editBook = (e) =>{
 
     if(status === 'on' ) {
         getBookIndex(index).read = 'off';
-        setStatus.innerText = 'Finished: off'
+        setStatus.innerText = "Din't read this book"
     }
     if(status === 'off' ) {
         getBookIndex(index).read = 'on';
-        setStatus.innerText = 'Finished: on'
+        setStatus.innerText = 'Read this book'
     }
-
-
 
     db().store('library',JSON.stringify(library.flat()));
     //window.location.reload();
 
 };
 
-
-
-
-
+const deleteBook = (e) => {
+  console.log(library);
+  let index = e.target.parentNode.getAttribute('data-book-index');
+  console.log(library[0].splice(index, 1));
+  db().store('library', JSON.stringify(library.flat()));
+  console.log(library);
+  window.location.reload();
+};
 
 
 // When DOM loads
@@ -96,8 +98,7 @@ const setup = () => {
     const {getData, store} = db();
 
    getData('library').then( data => {
-
-       if(data === null) {
+       if(data === null || data.length === 2) {
            let bookOne = new Book("Batman", "Sergio", 40, 'on');
            let bookTwo = new Book("Superman", "Isaac", 40, 'off');
            library.push([bookOne, bookTwo]);
@@ -117,11 +118,6 @@ const setup = () => {
 };
 
 setup();
-
-
-
-
-// Add data to database
 
 
 export default library;
