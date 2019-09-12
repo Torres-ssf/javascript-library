@@ -4,7 +4,7 @@ import library, { Book, AddBookToLibrary, db, render } from './library.js'
 
 //  Handle form
 const form = document.getElementById('form');
-let formButton = document.getElementById('button-form');
+const formButton = document.getElementById('button-form');
 formButton.onclick = () => {
     console.log("form working");
     form.style.display = 'block'
@@ -12,18 +12,18 @@ formButton.onclick = () => {
 };
 
 function handleForm() {
-    let title = document.getElementById('title').value;
-    let author = document.getElementById('author').value;
-    let pages = document.getElementById('pages').value;
-    let read = document.getElementById('read').value;
-    let book = new Book(title, author, pages, read);
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const pages = document.getElementById('pages').value;
+    const read = document.getElementById('read').value;
+    const book = new Book(title, author, pages, read);
 
     AddBookToLibrary(book);
     console.log(library.flat());
     db().store('library', JSON.stringify(library.flat()));
 }
 
-let handleSubmit = document.getElementById('form');
+const handleSubmit = document.getElementById('form');
 handleSubmit.onsubmit = (e) => {
 
     console.log("Testing submit button");
