@@ -1,4 +1,4 @@
-import library, {Book} from './library.js'
+import library, {Book, AddBookToLibrary, db} from './library.js'
 
 // Display logic
 function render() {
@@ -29,3 +29,26 @@ formButton.onclick  =  () => {
 /// Add to library Array
 // Save the library to database
 // and the we are cool!
+
+function handleForm() {
+
+  let title = document.getElementById('title').value;
+  let author = document.getElementById('author').value;
+  let pages = document.getElementById('pages').value;
+  let read = document.getElementById('read').value;
+
+  let book = new Book(title, author, pages, read);
+
+  AddBookToLibrary(book);
+
+  console.log(library.flat());
+
+  db().store('library', JSON.stringify(library.flat()));
+}
+
+let handleSubmit = document.getElementById('form');
+handleSubmit.onsubmit = (e) => {
+  e.preventDefault();
+  console.log("Testing submit button");
+  handleForm();
+}

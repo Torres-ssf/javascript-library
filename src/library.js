@@ -10,6 +10,10 @@ export function Book(title, author,pages, read) {
     this.read = read;
 }
 
+// add to library
+export function AddBookToLibrary(book) {
+  return library.push(book)
+}
 //  Database
 const db = () => {
     const  store = (key,value) => {
@@ -32,3 +36,4 @@ library.push([bookOne,bookTwo]);
 db().store("library",JSON.stringify(library.flat()));
 
 export default library;
+export {db}
