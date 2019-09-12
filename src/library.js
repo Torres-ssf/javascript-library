@@ -3,7 +3,7 @@ console.log('library is working now');
 let library = [];
 
 // console.log(library);
-function Book(title, author,pages, read) {
+export function Book(title, author,pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
