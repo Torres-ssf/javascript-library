@@ -1,6 +1,6 @@
 body {
   background-color: #ecf4f3;
-  font-family: 'Roboto', sans-serif; }
+  font-family: "Roboto", sans-serif; }
 
 input,
 label {
@@ -17,15 +17,15 @@ li {
   text-align: center; }
 
 .form {
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  box-shadow: 0 4px 15px rgba(128, 128, 128, 0.48);
   background-color: white;
   display: none;
   margin: 0 auto;
-  width: 360px;
-  text-align: center;
   box-sizing: border-box;
-  border: 1px solid rgba(128, 128, 128, 0.4);
-  box-shadow: 0 4px 15px rgba(128, 128, 128, 0.48);
-  transition: all 1s ease-in-out; }
+  text-align: center;
+  transition: all 1s ease-in-out;
+  width: 360px; }
 
 .form > .div {
   text-align: left;
@@ -33,22 +33,24 @@ li {
   padding: 8px;
   width: 360px; }
 
-.form input[type=text], input[type=number] {
-  border: 1px solid	#DCDCDC;
+.form input[type="text"],
+input[type="number"] {
+  border: 1px solid #dcdcdc;
   box-sizing: border-box;
   border-radius: 4px;
   padding: 12px 18px;
   width: 90%; }
 
-.form label[for=read], input[type=checkbox] {
+.form label[for="read"],
+input[type="checkbox"] {
   display: inline-block; }
 
 .book-list {
-  height: auto;
   display: flex;
+  height: auto;
   flex-direction: row;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
   text-align: left; }
 
 .book-item {
@@ -57,13 +59,13 @@ li {
   border-radius: 5px;
   box-sizing: border-box;
   box-shadow: 0 4px 15px rgba(128, 128, 128, 0.48);
+  height: 470px;
   margin: 6px auto;
   position: relative;
-  width: 198px;
-  height: 470px; }
+  width: 198px; }
   .book-item h4,
   .book-item p {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     padding: 0 8px; }
   .book-item p {
     font-size: 0.9rem;
@@ -78,10 +80,11 @@ li {
     margin: 4px 0; }
 
 #lib-container {
-  width: 100%;
-  text-align: center; }
+  text-align: center;
+  width: 100%; }
 
-#button-form, #submit {
+#button-form,
+#submit {
   background-color: white;
   border: 2px solid #007bff;
   border-radius: 5px;
@@ -93,14 +96,15 @@ li {
   display: block;
   margin: 0 auto 20px; }
 
-#button-form:hover, #submit:hover {
+#button-form:hover,
+#submit:hover {
   background-color: #007bff;
   color: white; }
 
 #book-cover {
   border-radius: 5px 5px 0 0;
-  width: 198px;
-  height: 300x; }
+  height: 300x;
+  width: 198px; }
 
 #toggle-delete,
 #toggle-read {
