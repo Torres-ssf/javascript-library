@@ -1,4 +1,4 @@
-import library, { Book, AddBookToLibrary, db, render } from './library.js'
+import library, { Book, AddBookToLibrary, db } from './library.js';
 
 // Display logic
 
@@ -24,7 +24,7 @@ function handleForm() {
 }
 
 const handleSubmit = document.getElementById('form');
-handleSubmit.onsubmit = (e) => {
+handleSubmit.onsubmit = () => {
 
     console.log("Testing submit button");
     handleForm();
