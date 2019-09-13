@@ -23,6 +23,5 @@ function handleForm() {
 
 const handleSubmit = document.getElementById("form");
 handleSubmit.onsubmit = () => {
-    console.log("Testing submit button");
     handleForm();
 };
