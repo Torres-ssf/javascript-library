@@ -1,1 +1,125 @@
-!function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t,n){"use strict";n.r(t),console.log("library is working now");const o=[];function r(e,t,n,o){this.title=e,this.author=t,this.pages=n,this.read=o,this.status="on"===this.read?this.read="off":this.read="on"}const l=()=>{return{store:(e,t)=>localStorage.setItem(e,t),getData:async e=>{return await localStorage.getItem(e)}}};const i=e=>o.flat()[e],a=e=>{let t=e.target.previousSibling.previousSibling,n=e.target.parentNode.getAttribute("data-book-index"),r=i(n).read;"on"===r&&(i(n).read="off",t.innerText="Din't read this book"),"off"===r&&(i(n).read="on",t.innerText="Read this book"),l().store("library",JSON.stringify(o.flat()))},u=e=>{console.log(o);let t=e.target.parentNode.getAttribute("data-book-index");console.log(o[0].splice(t,1)),l().store("library",JSON.stringify(o.flat())),console.log(o),window.location.reload()};(()=>{const{getData:e,store:t}=l();e("library").then(n=>{if(null===n||2===n.length){let e=new r("Batman","Sergio",40,"on"),n=new r("Superman","Isaac",40,"off");o.push([e,n]),t("library",JSON.stringify(o.flat())),window.location.reload()}null!==n&&e("library").then(e=>{o.push(JSON.parse(e)),function(e){const t=document.getElementById("lib-container");let n=document.createElement("ul");console.log(e),e.flat().map((e,o)=>{let r=document.createElement("li"),l=document.createElement("button");l.setAttribute("id","toggle-read"),l.innerText="Read",l.onclick=e=>a(e);let i=document.createElement("button");i.innerText="Delete",i.onclick=e=>u(e),r.setAttribute("data-book-index",o),r.innerHTML=`<p>Title: ${e.title}</p>\n                    <p>Author: ${e.author}</p>\n                    <p>Pages: ${e.pages}</p>\n                    <p>Finished: ${e.read}</p>\n                    `,r.appendChild(l),r.appendChild(i),n.appendChild(r),t.appendChild(n)})}(o)})})})();var c=o;const d=document.getElementById("form");function s(){!function(e){o.push(e)}(new r(document.getElementById("title").value,document.getElementById("author").value,document.getElementById("pages").value,document.getElementById("read").value)),console.log(c.flat()),l().store("library",JSON.stringify(c.flat()))}document.getElementById("button-form").onclick=()=>{console.log("form working"),d.style.display="block"},document.getElementById("form").onsubmit=()=>{console.log("Testing submit button"),s()},console.log("I am up and running")}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/display_library.js":
+/*!********************************!*\
+  !*** ./src/display_library.js ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _library_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./library.js */ \"./src/library.js\");\n\n\n// Display logic\n\n//  Handle form\nconst form = document.getElementById('form');\nconst formButton = document.getElementById('button-form');\nformButton.onclick = () => {\n  console.log(\"form working\");\n  form.style.display = 'block'\n\n};\n\nfunction handleForm() {\n  const title = document.getElementById('title').value;\n  const author = document.getElementById('author').value;\n  const pages = document.getElementById('pages').value;\n  const read = document.getElementById('read').value;\n  const book = new _library_js__WEBPACK_IMPORTED_MODULE_0__[\"Book\"](title, author, pages, read);\n\n  Object(_library_js__WEBPACK_IMPORTED_MODULE_0__[\"AddBookToLibrary\"])(book);\n  console.log(_library_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].flat());\n  Object(_library_js__WEBPACK_IMPORTED_MODULE_0__[\"db\"])().store('library', JSON.stringify(_library_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].flat()));\n}\n\nconst handleSubmit = document.getElementById('form');\nhandleSubmit.onsubmit = () => {\n\n  console.log(\"Testing submit button\");\n  handleForm();\n};\n\n\n//# sourceURL=webpack:///./src/display_library.js?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _library__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./library */ \"./src/library.js\");\n/* harmony import */ var _display_library__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./display_library */ \"./src/display_library.js\");\nconsole.log(\"I am up and running\")\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/library.js":
+/*!************************!*\
+  !*** ./src/library.js ***!
+  \************************/
+/*! exports provided: Book, AddBookToLibrary, render, default, db */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Book\", function() { return Book; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"AddBookToLibrary\", function() { return AddBookToLibrary; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"db\", function() { return db; });\nconst library = [];\n\nfunction Book(title, author, pages, read) {\n  this.title = title;\n  this.author = author;\n  this.pages = pages;\n  this.read = read;\n  this.status = this.read === 'on' ? this.read = 'off' : this.read = 'on';\n}\n\n// add to library\nfunction AddBookToLibrary(book) {\n  library.push(book)\n}\n\n//  Database\nconst db = () => {\n  const store = (key, value) => {\n    return localStorage.setItem(key, value)\n  };\n\n  const getData = async (dbKey) => {\n    let data = await localStorage.getItem(dbKey);\n    return data\n  };\n  return {\n    store,\n    getData\n  }\n};\n\n// display library\nfunction render(data) {\n  const container = document.getElementById(\"lib-container\");\n  let ul = document.createElement('ul');\n  ul.className = 'book-list';\n\n  data.flat().map((book, i) => {\n    let li = document.createElement('li');\n    li.className = 'book-item';\n    let editButton = document.createElement('button');\n    editButton.setAttribute('id', 'toggle-read');\n    editButton.innerText = \"Read\";\n    editButton.onclick = (e) => editBook(e);\n\n    let deleteButton = document.createElement('button');\n    deleteButton.setAttribute('id', 'toggle-delete')\n    deleteButton.innerText = \"Delete\";\n    deleteButton.onclick = (e) => deleteBook(e);\n\n    li.setAttribute('data-book-index', i)\n    li.innerHTML = `<img id=\"book-cover\" src=\"/images/image.jpg\"></img>\n                    <h4 class=\"book-title\">${book.title}</h4>\n                    <p class=\"book-author\">${book.author}</p>\n                    <p class=\"book-pages\">${book.pages} pages.</p>\n                    <p>Read: ${book.read}</p>\n                    `;\n\n    li.appendChild(editButton);\n    li.appendChild(deleteButton);\n    ul.appendChild(li);\n    container.appendChild(ul);\n  });\n}\nconst getBookIndex = (index) => {\n  return library.flat()[index]\n};\n\n\nconst editBook = (e) => {\n  let setStatus = e.target.previousSibling.previousSibling;\n  let index = e.target.parentNode.getAttribute('data-book-index');\n  let status = getBookIndex(index).read;\n\n  if (status === 'on') {\n    getBookIndex(index).read = 'off';\n    e.target.innerText = 'Read'\n    setStatus.innerText = \"Read: No\"\n  }\n  if (status === 'off') {\n    getBookIndex(index).read = 'on';\n    e.target.innerText = 'Unread'\n    setStatus.innerText = 'Read: Yes'\n  }\n\n  db().store('library', JSON.stringify(library.flat()));\n  //window.location.reload();\n\n};\n\nconst deleteBook = (e) => {\n  let index = e.target.parentNode.getAttribute('data-book-index');\n  library[0].splice(index, 1);\n  db().store('library', JSON.stringify(library.flat()));\n  window.location.reload();\n};\n\n\n// When DOM loads\nconst setup = () => {\n  const {\n    getData,\n    store\n  } = db();\n\n  getData('library').then(data => {\n    if (data === null || data.length === 2) {\n      let bookOne = new Book(\"Batman\", \"Sergio\", 40, 'on');\n      let bookTwo = new Book(\"Superman\", \"Isaac\", 40, 'off');\n      library.push([bookOne, bookTwo]);\n      store('library', JSON.stringify(library.flat()))\n      window.location.reload()\n    }\n\n    if (data !== null) {\n      getData('library').then(data => {\n\n        library.push(JSON.parse(data));\n        render(library)\n      })\n    }\n  });\n\n};\n\nsetup();\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (library);\n\n\n\n//# sourceURL=webpack:///./src/library.js?");
+
+/***/ })
+
+/******/ });

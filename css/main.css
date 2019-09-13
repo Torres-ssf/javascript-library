@@ -1,19 +1,136 @@
-.form {
-  display: none;
-  margin: auto;
-  width: 20em;
-  text-align: center;
-  border: 1px solid rgba(128, 128, 128, 0.4);
-  box-shadow: 0px 4px 15px rgba(128, 128, 128, 0.48);
-  transition: all 1s ease-in-out; }
+body {
+  background-color: #ecf4f3;
+  font-family: 'Roboto', sans-serif; }
 
-.form > .div {
-  margin: 0 auto;
-  width: 80%; }
-
-input, label {
+input,
+label {
   display: block;
   margin: 1em; }
 
+ul {
+  padding: 0; }
+
 li {
   list-style: none; }
+
+.page-heading {
+  text-align: center; }
+
+.form {
+  background-color: white;
+  display: none;
+  margin: 0 auto;
+  width: 360px;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  box-shadow: 0 4px 15px rgba(128, 128, 128, 0.48);
+  transition: all 1s ease-in-out; }
+
+.form > .div {
+  text-align: left;
+  box-sizing: border-box;
+  padding: 8px;
+  width: 360px; }
+
+.form input[type=text], input[type=number] {
+  border: 1px solid	#DCDCDC;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 12px 18px;
+  width: 90%; }
+
+.form label[for=read], input[type=checkbox] {
+  display: inline-block; }
+
+.book-list {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left; }
+
+.book-item {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(128, 128, 128, 0.48);
+  margin: 6px auto;
+  position: relative;
+  width: 198px;
+  height: 470px; }
+  .book-item h4,
+  .book-item p {
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 0 8px; }
+  .book-item p {
+    font-size: 0.9rem;
+    margin: 0; }
+  .book-item .book-title {
+    margin: 4px 0 0;
+    font-size: 1.2rem;
+    text-overflow: ellipsis; }
+  .book-item .book-author {
+    color: #007bff; }
+  .book-item .book-pages {
+    margin: 4px 0; }
+
+#lib-container {
+  width: 100%;
+  text-align: center; }
+
+#button-form, #submit {
+  background-color: white;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 16px 32px;
+  transition-duration: 0.4s; }
+
+#submit {
+  display: block;
+  margin: 0 auto 20px; }
+
+#button-form:hover, #submit:hover {
+  background-color: #007bff;
+  color: white; }
+
+#book-cover {
+  border-radius: 5px 5px 0 0;
+  width: 198px;
+  height: 300x; }
+
+#toggle-delete,
+#toggle-read {
+  background-color: white;
+  border: none;
+  padding: 0;
+  font-size: 1.2rem;
+  height: 2.5em;
+  position: absolute;
+  bottom: 0;
+  width: 50%; }
+
+#toggle-read {
+  border-radius: 0 0 0 5px;
+  left: 0;
+  color: #007bff;
+  transition-duration: 0.4s; }
+
+#toggle-read:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white; }
+
+#toggle-delete {
+  border-radius: 0 0 5px 0;
+  right: 0;
+  color: #dc3545;
+  transition-duration: 0.4s; }
+
+#toggle-delete:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white; }
