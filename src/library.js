@@ -39,17 +39,17 @@ export function render(data) {
         let li = document.createElement("li");
         li.className = "book-item";
         let editButton = document.createElement("button");
-        editButton.setAttribute("id", "toggle-read");
+        editButton.setAttribute("class", "toggle-read");
         editButton.innerText = "Read";
         editButton.onclick = e => editBook(e);
 
         let deleteButton = document.createElement("button");
-        deleteButton.setAttribute("id", "toggle-delete");
+        deleteButton.setAttribute("class", "toggle-delete");
         deleteButton.innerText = "Delete";
         deleteButton.onclick = e => deleteBook(e);
 
         li.setAttribute("data-book-index", i);
-        li.innerHTML = `<img id="book-cover" src="/images/image.jpg"></img>
+        li.innerHTML = `<img class="book-cover" src="./images/image.jpg">
                     <h4 class="book-title">${book.title}</h4>
                     <p class="book-author">${book.author}</p>
                     <p class="book-pages">${book.pages} pages.</p>

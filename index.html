@@ -1,43 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/main.css">
-  <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
 </head>
 
 <body>
-  <h1 class="page-heading">Personal Library</h1>
-  <div id="lib-container">
-    <button id="button-form">Add book to Library</button>
-  </div>
-
-  <form action="" class="form" id="form">
-    <div class="div">
-      <label for="title">Title</label>
-      <input type="text" placeholder="title" id="title">
-
-      <label for="title">Author</label>
-      <input type="text" placeholder="author" id="author">
-
-      <label for="title">Pages</label>
-      <input type="number" placeholder="Pages" id="pages">
-
-      <label for="read">Did you already read this book?</label>
-      <input type="checkbox" placeholder="read" id="read">
-
-      <button id="submit"> Add Book </button>
+    <h1 class="page-heading">Personal Library</h1>
+    <div id="lib-container">
+        <button class="button-form" id="button-form">Add book to Library</button>
     </div>
-  </form>
 
+    <form action="" class="form" id="form">
+        <div class="div">
+            <label for="title">Title</label>
+            <input type="text" placeholder="title" class="title" id="title" />
 
-  <script src="./dist/main.js"></script>
+            <label for="title">Author</label>
+            <input type="text" placeholder="author" id="author" class="author" />
 
+            <label for="title">Pages</label>
+            <input type="number" placeholder="Pages" id="pages" class="pages" />
+
+            <label for="read">Did you already read this book?</label>
+            <input type="checkbox" placeholder="read" id="read" class="read" />
+
+            <button class="submit" id="submit">Add Book</button>
+        </div>
+    </form>
+
+    <script src="./dist/main.js"></script>
 </body>
 
 </html>

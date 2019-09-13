@@ -17,12 +17,12 @@ li {
   text-align: center; }
 
 .form {
+  background-color: white;
   border: 1px solid rgba(128, 128, 128, 0.4);
   box-shadow: 0 4px 15px rgba(128, 128, 128, 0.48);
-  background-color: white;
+  box-sizing: border-box;
   display: none;
   margin: 0 auto;
-  box-sizing: border-box;
   text-align: center;
   transition: all 1s ease-in-out;
   width: 360px; }
@@ -36,8 +36,8 @@ li {
 .form input[type="text"],
 input[type="number"] {
   border: 1px solid #dcdcdc;
-  box-sizing: border-box;
   border-radius: 4px;
+  box-sizing: border-box;
   padding: 12px 18px;
   width: 90%; }
 
@@ -79,62 +79,64 @@ input[type="checkbox"] {
   .book-item .book-pages {
     margin: 4px 0; }
 
-#lib-container {
+.lib-container {
   text-align: center;
   width: 100%; }
 
-#button-form,
-#submit {
+.button-form,
+.submit {
   background-color: white;
   border: 2px solid #007bff;
   border-radius: 5px;
   font-size: 1rem;
   padding: 16px 32px;
-  transition-duration: 0.4s; }
+  transition-duration: 0.4s;
+  margin: 0 auto;
+  display: block; }
 
-#submit {
+.submit {
   display: block;
   margin: 0 auto 20px; }
 
-#button-form:hover,
-#submit:hover {
+.button-form:hover,
+.submit:hover {
   background-color: #007bff;
   color: white; }
 
-#book-cover {
+.book-cover {
   border-radius: 5px 5px 0 0;
-  height: 300x;
+  height: 300px;
   width: 198px; }
 
-#toggle-delete,
-#toggle-read {
+.toggle-delete,
+.toggle-read {
   background-color: white;
   border: none;
-  padding: 0;
+  bottom: 0;
   font-size: 1.2rem;
   height: 2.5em;
+  padding: 0;
   position: absolute;
-  bottom: 0;
   width: 50%; }
 
-#toggle-read {
+.toggle-read {
   border-radius: 0 0 0 5px;
-  left: 0;
   color: #007bff;
+  left: 0;
   transition-duration: 0.4s; }
 
-#toggle-read:hover {
+.toggle-read:hover {
   background-color: #007bff;
   border-color: #007bff;
   color: white; }
 
-#toggle-delete {
+.toggle-delete {
   border-radius: 0 0 5px 0;
-  right: 0;
   color: #dc3545;
+  right: 0;
   transition-duration: 0.4s; }
 
-#toggle-delete:hover {
+.toggle-delete:hover {
   background-color: #dc3545;
   border-color: #dc3545;
   color: white; }
