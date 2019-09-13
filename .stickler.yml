@@ -4,6 +4,7 @@ linters:
     config: "./eslint.config"
     fixer: true
   csslint:
+    config: 'stylelint.config.js'
 files:
   ignore:
     - "src/generated/*"
