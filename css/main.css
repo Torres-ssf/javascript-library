@@ -17,7 +17,8 @@ li {
   text-align: center; }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  animation: opacity-anim 500ms;
+  background-color: rgba(0, 0, 0, 0.4);
   bottom: 0;
   cursor: pointer;
   display: none;
@@ -30,6 +31,8 @@ li {
   z-index: 10; }
 
 .form {
+  animation-name: form-appearing;
+  animation-duration: 700ms;
   background-color: white;
   border: 1px solid rgba(128, 128, 128, 0.4);
   box-shadow: 0 4px 15px rgba(128, 128, 128, 0.48);
@@ -52,6 +55,7 @@ li {
   text-align: left;
   box-sizing: border-box;
   padding: 8px;
+  overflow: hidden;
   width: 360px; }
 
 .form input[type="text"],
@@ -65,6 +69,25 @@ input[type="number"] {
 .form label[for="read"],
 input[type="checkbox"] {
   display: inline-block; }
+
+.div * {
+  animation: form-fields 500ms;
+  animation-fill-mode: backwards; }
+
+.div input:nth-child(4),
+.div label:nth-child(3) {
+  animation-delay: 100ms; }
+
+.div input:nth-child(6),
+.div label:nth-child(5) {
+  animation-delay: 200ms; }
+
+.div input:nth-child(8),
+.div label:nth-child(7) {
+  animation-delay: 300ms; }
+
+.div button:nth-child(9) {
+  animation-delay: 400ms; }
 
 .book-list {
   display: flex;
@@ -161,3 +184,25 @@ input[type="checkbox"] {
   background-color: #dc3545;
   border-color: #dc3545;
   color: white; }
+
+@keyframes opacity-anim {
+  from {
+    background-color: rgba(0, 0, 0, 0); }
+  to {
+    background-color: rgba(0, 0, 0, 0.4); } }
+
+@keyframes form-appearing {
+  from {
+    opacity: 0;
+    transform: scale(0.9); }
+  to {
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes form-fields {
+  from {
+    opacity: 0;
+    transform: translateX(-35%); }
+  to {
+    opacity: 1;
+    transform: translateX(0%); } }
