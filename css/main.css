@@ -17,7 +17,7 @@ li {
   text-align: center; }
 
 .overlay {
-  animation: opacity-anim 500ms;
+  animation: fade-in 500ms;
   background-color: rgba(0, 0, 0, 0.4);
   bottom: 0;
   cursor: pointer;
@@ -29,6 +29,9 @@ li {
   top: 0;
   width: 100%;
   z-index: 10; }
+
+.overlay-fade-out {
+  animation: fade-out 500ms forwards; }
 
 .form {
   animation-name: form-appearing;
@@ -50,6 +53,9 @@ li {
   width: 360px;
   height: 430px;
   z-index: 12; }
+
+.form-hide {
+  animation: form-hiding 500ms forwards; }
 
 .form > .div {
   text-align: left;
@@ -185,11 +191,17 @@ input[type="checkbox"] {
   border-color: #dc3545;
   color: white; }
 
-@keyframes opacity-anim {
+@keyframes fade-in {
   from {
     background-color: rgba(0, 0, 0, 0); }
   to {
     background-color: rgba(0, 0, 0, 0.4); } }
+
+@keyframes fade-out {
+  from {
+    background-color: rgba(0, 0, 0, 0.4); }
+  to {
+    background-color: rgba(0, 0, 0, 0); } }
 
 @keyframes form-appearing {
   from {
@@ -198,6 +210,12 @@ input[type="checkbox"] {
   to {
     opacity: 1;
     transform: scale(1); } }
+
+@keyframes form-hiding {
+  from {
+    transform: translateY(0); }
+  to {
+    transform: translateY(100vh); } }
 
 @keyframes form-fields {
   from {

@@ -15,10 +15,24 @@ formButton.onclick = () => {
   form.style.display = "block";
 };
 
+form.addEventListener('animationend', (event) => {
+  if(event.animationName == 'form-hiding') {
+    form.style.display = 'none';
+    form.classList.remove('form-hide');
+  }
+});
+
 overlayContainer.onclick = () => {
-  overlayContainer.style.display = 'none';
-  form.style.display = 'none';
+  overlayContainer.classList.add('overlay-fade-out');
+  form.classList.add('form-hide');
 }
+
+overlayContainer.addEventListener('animationend', (event) => {
+  if(event.animationName == 'fade-out') {
+    overlayContainer.style.display = 'none';
+    overlayContainer.classList.remove('overlay-fade-out');
+  }
+});
 
 function handleForm() {
   const title = document.getElementById("title").value;
