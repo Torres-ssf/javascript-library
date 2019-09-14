@@ -165,6 +165,10 @@ input[type="checkbox"] {
   }
 }
 
+.book-item:hover{
+  box-shadow: 0 7px 30px rgba(128, 128, 128, 0.66);
+}
+
 .lib-container {
   text-align: center;
   width: 100%;
@@ -312,4 +316,31 @@ input[type="checkbox"] {
     opacity: 1;
     transform: translateX(0%);
   }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  .book-item{
+    margin: 2em 1em 0;
+    width: 45%;
+
+  }
+  .book-cover{
+    width: 100%;
+  }
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+    .book-item{
+      margin: 2em auto 0;
+        width: 80%;
+
+    }
+    .book-cover{
+        width: 100%;
+    }
 }
