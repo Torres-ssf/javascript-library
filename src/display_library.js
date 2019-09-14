@@ -40,9 +40,10 @@ overlayContainer.addEventListener('animationend', (event) => {
 function handleForm() {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
+  const image = document.getElementById('image').value;
   const pages = document.getElementById("pages").value;
   const read = document.getElementById("read").value;
-  const book = new Book(title, author, pages, read);
+  const book = new Book(title, author, pages, read, image);
 
   AddBookToLibrary(book);
 
