@@ -99,9 +99,13 @@ const setup = () => {
 
     getData("library").then(data => {
         if (data === null || data.length === 2) {
-            let bookOne = new Book("Batman", "Sergio", 40, "on");
-            let bookTwo = new Book("Superman", "Isaac", 40, "off");
-            library.push([bookOne, bookTwo]);
+            let book1 = new Book("Batman", "DC", 210, "on");
+            let book2 = new Book("Superman", "DC", 80, "off");
+            let book3 = new Book("Thor", "Marvel", 60, "off");
+            let book4 = new Book("Spiderman", "Marvel", 70, "off");
+            let book5 = new Book("Iron Man", "Marvel", 110, "off");
+            let book6 = new Book("Captain America", "DC", 95, "off");
+            library.push([book1, book2, book3, book4, book5, book6]);
             store("library", JSON.stringify(library.flat()));
             window.location.reload();
         }
