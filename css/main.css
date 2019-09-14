@@ -54,8 +54,13 @@ li {
   height: 430px;
   z-index: 12; }
 
+.form-error {
+  animation: nope 300ms linear, form-appearing paused;
+  animation-iteration-count: 2; }
+
 .form-hide {
-  animation: form-hiding 500ms forwards; }
+  animation: form-hiding 500ms forwards;
+  animation-timing-function: ease-in-out; }
 
 .form > .div {
   text-align: left;
@@ -104,13 +109,14 @@ input[type="checkbox"] {
   text-align: left; }
 
 .book-item {
+  animation: book-appearing 500ms;
   background-color: white;
   border: 1px solid white;
   border-radius: 5px;
   box-sizing: border-box;
   box-shadow: 0 4px 15px rgba(128, 128, 128, 0.48);
   height: 470px;
-  margin: 6px auto;
+  margin: 12px 20px;
   position: relative;
   width: 198px; }
   .book-item h4,
@@ -191,6 +197,14 @@ input[type="checkbox"] {
   border-color: #dc3545;
   color: white; }
 
+@keyframes book-appearing {
+  from {
+    opacity: 0;
+    transform: translateX(100%); }
+  to {
+    opacity: 1;
+    transform: translateX(0%); } }
+
 @keyframes fade-in {
   from {
     background-color: rgba(0, 0, 0, 0); }
@@ -216,6 +230,16 @@ input[type="checkbox"] {
     transform: translateY(0); }
   to {
     transform: translateY(100vh); } }
+
+@keyframes nope {
+  0% {
+    transform: translateX(0); }
+  30% {
+    transform: translateX(15%); }
+  65% {
+    transform: translateX(-15%); }
+  100% {
+    transform: translateX(0); } }
 
 @keyframes form-fields {
   from {
