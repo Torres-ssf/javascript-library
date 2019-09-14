@@ -13,3 +13,5 @@ files:
     - "dist/*"
     - "index.html"
     - "src/*"
+    - "stylelint.config.js"
+    - "eslintrc.js"
