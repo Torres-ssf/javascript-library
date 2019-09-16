@@ -8,7 +8,6 @@ import library, {
 
 //  Handle form
 const form = document.getElementById("form");
-// const requiredInputs = document.getElementsByClassName('required');
 const formButton = document.getElementById("button-form");
 const overlayContainer = document.querySelector(".overlay");
 formButton.onclick = () => {
@@ -51,14 +50,12 @@ function handleForm() {
 }
 
 function handleFormError() {
-  console.log("estoy aqui");
   form.classList.add('form-error');
 }
 
 
 const handelError = () => {
   let requiredInputs = document.getElementsByClassName('required');
-  console.log(requiredInputs);
   Array.prototype.forEach.call(requiredInputs, input => {
     if (input.value === '') {
       form.classList.add('form-error');

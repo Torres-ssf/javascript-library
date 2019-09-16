@@ -89,10 +89,9 @@ input[type="number"] {
   width: 90%;
 }
 
-.form{
+.form {
   height: 32em;
 }
-
 
 .form label[for="read"],
 input[type="checkbox"] {
@@ -170,7 +169,7 @@ input[type="checkbox"] {
   }
 }
 
-.book-item:hover{
+.book-item:hover {
   box-shadow: 0 7px 30px rgba(128, 128, 128, 0.66);
 }
 
@@ -322,30 +321,23 @@ input[type="checkbox"] {
     transform: translateX(0%);
   }
 }
-
-
 @media screen and (max-width: 1000px) {
-
-  .book-item{
+  .book-item {
     margin: 2em 1em 0;
     width: 45%;
-
   }
-  .book-cover{
+
+  .book-cover {
     width: 100%;
   }
 }
-
-
-
 @media screen and (max-width: 700px) {
+  .book-item {
+    margin: 2em auto 0;
+    width: 80%;
+  }
 
-    .book-item{
-      margin: 2em auto 0;
-        width: 80%;
-
-    }
-    .book-cover{
-        width: 100%;
-    }
+  .book-cover {
+    width: 100%;
+  }
 }
