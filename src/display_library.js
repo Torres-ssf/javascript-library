@@ -17,10 +17,10 @@ formButton.onclick = () => {
 };
 
 form.addEventListener('animationend', (event) => {
-  if (event.animationName == 'form-hiding') {
+  if (event.animationName === 'form-hiding') {
     form.style.display = 'none';
     form.classList.remove('form-hide');
-  } else if (event.animationName == 'nope') {
+  } else if (event.animationName === 'nope') {
     form.classList.remove('form-error')
   }
 });
@@ -31,7 +31,7 @@ overlayContainer.onclick = () => {
 }
 
 overlayContainer.addEventListener('animationend', (event) => {
-  if (event.animationName == 'fade-out') {
+  if (event.animationName === 'fade-out') {
     overlayContainer.style.display = 'none';
     overlayContainer.classList.remove('overlay-fade-out');
   }
@@ -55,17 +55,21 @@ function handleFormError() {
   form.classList.add('form-error');
 }
 
-const submitButton = document.getElementById('submit');
-submitButton.onclick = () => {
+
+const handelError = () => {
   let requiredInputs = document.getElementsByClassName('required');
+  console.log(requiredInputs);
   Array.prototype.forEach.call(requiredInputs, input => {
     if (input.value === '') {
       form.classList.add('form-error');
     }
   })
-}
+};
+
+
 
 const handleSubmit = document.getElementById("form");
 handleSubmit.onsubmit = () => {
   handleForm();
+  handelError()
 };
