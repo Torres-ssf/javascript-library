@@ -1,8 +1,10 @@
-# javascript-library
-
-#### Created By [Sergio](https://github.com/Torres-ssf) and [Ispire](https://github.com/Ispirett)
+# PROJECT: JAVASCRIPT LIBRARY
 
 This project mimics a library using pure javascript that manipulates the Dom.
+
+#### [Assignment link](https://www.theodinproject.com/courses/javascript/lessons/library)
+
+#### [Live link](https://torres-ssf.github.io/javascript-library/)
 
 #### Features
 * Add Books to Library
@@ -10,4 +12,7 @@ This project mimics a library using pure javascript that manipulates the Dom.
 * Delete Books from Library
 * Books add save to a database
 
-#### [Live link](https://torres-ssf.github.io/javascript-library/)
+#### Authors
+
+* [@TorresChief](https://github.com/Torres-ssf/)
+* [@Ispire](https://github.com/Ispirett/)
