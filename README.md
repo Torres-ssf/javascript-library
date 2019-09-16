@@ -14,5 +14,5 @@ This project mimics a library using pure javascript that manipulates the Dom.
 
 #### Authors
 
-* [TorresChief](https://github.com/TorresChief)
-* [Ispire](https://github.com/Ispirett)
+* [@TorresChief](https://github.com/Torres-ssf/)
+* [@Ispire](https://github.com/Ispirett/)
