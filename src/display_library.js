@@ -49,11 +49,6 @@ function handleForm() {
   db().store("library", JSON.stringify(library.flat()));
 }
 
-function handleFormError() {
-  form.classList.add('form-error');
-}
-
-
 const handelError = () => {
   let requiredInputs = document.getElementsByClassName('required');
   Array.prototype.forEach.call(requiredInputs, input => {
