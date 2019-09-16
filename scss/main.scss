@@ -1,25 +1,343 @@
-
-.form{
-  display: none ;
-  margin: auto;
-  width: 20em;
-  text-align: center;
-  border: 1px solid rgba(128, 128, 128, 0.4);
-  box-shadow: 0px 4px 15px rgba(128, 128, 128, 0.48);
-  transition: all 1s ease-in-out;
+body {
+  background-color: #ecf4f3;
+  font-family: "Roboto", sans-serif;
 }
 
-.form > .div{
-  margin: 0 auto;
-  width: 80%;
-}
-
-input,label{
+input,
+label {
   display: block;
   margin: 1em;
-
 }
 
-li{
+ul {
+  padding: 0;
+}
+
+li {
   list-style: none;
+}
+
+.page-heading {
+  text-align: center;
+}
+
+.overlay {
+  animation: fade-in 500ms;
+  background-color: rgba(0,0,0,0.4);
+  bottom: 0;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.overlay-fade-out {
+  animation: fade-out 500ms forwards;
+}
+
+.form {
+  animation-name: form-appearing;
+  animation-duration: 700ms;
+  background-color: white;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  box-shadow: 0 4px 15px rgba(128, 128, 128, 0.48);
+  box-sizing: border-box;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-radius: 5px;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  transition: all 1s ease-in-out;
+  width: 360px;
+  height: 430px;
+  z-index: 12;
+}
+
+.form-error {
+  animation: nope 300ms linear, form-appearing paused;
+  animation-iteration-count: 2;
+}
+
+.form-hide {
+  animation: form-hiding 500ms forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.form > .div {
+  text-align: left;
+  box-sizing: border-box;
+  padding: 8px;
+  overflow: hidden;
+  width: 360px;
+}
+
+.form input[type="text"],
+input[type="number"] {
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px 18px;
+  width: 90%;
+}
+
+.form {
+  height: 32em;
+}
+
+.form label[for="read"],
+input[type="checkbox"] {
+  display: inline-block;
+}
+
+.div * {
+  animation: form-fields 500ms;
+  animation-fill-mode: backwards;
+}
+
+.div input:nth-child(4),
+.div label:nth-child(3) {
+  animation-delay: 100ms;
+}
+
+.div input:nth-child(6),
+.div label:nth-child(5) {
+  animation-delay: 200ms;
+}
+
+.div input:nth-child(8),
+.div label:nth-child(7) {
+  animation-delay: 300ms;
+}
+
+.div button:nth-child(9) {
+  animation-delay: 400ms;
+}
+
+.book-list {
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.book-item {
+  animation: book-appearing 500ms;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 15px rgba(128, 128, 128, 0.48);
+  height: 470px;
+  margin: 12px 20px;
+  position: relative;
+  width: 198px;
+
+  h4,
+  p {
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 0 8px;
+  }
+
+  p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .book-title {
+    margin: 4px 0 0;
+    font-size: 1.2rem;
+    text-overflow: ellipsis;
+  }
+
+  .book-author {
+    color: #007bff;
+  }
+
+  .book-pages {
+    margin: 4px 0;
+  }
+}
+
+.book-item:hover {
+  box-shadow: 0 7px 30px rgba(128, 128, 128, 0.66);
+}
+
+.lib-container {
+  text-align: center;
+  width: 100%;
+}
+
+.button-form,
+.submit {
+  background-color: white;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 16px 32px;
+  transition-duration: 0.4s;
+  margin: 0 auto;
+  display: block;
+}
+
+.submit {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.button-form:hover,
+.submit:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.book-cover {
+  border-radius: 5px 5px 0 0;
+  height: 300px;
+  width: 198px;
+}
+
+.toggle-delete,
+.toggle-read {
+  background-color: white;
+  border: none;
+  bottom: 0;
+  font-size: 1.2rem;
+  height: 2.5em;
+  padding: 0;
+  position: absolute;
+  width: 50%;
+}
+
+.toggle-read {
+  border-radius: 0 0 0 5px;
+  color: #007bff;
+  left: 0;
+  transition-duration: 0.4s;
+}
+
+.toggle-read:hover {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.toggle-delete {
+  border-radius: 0 0 5px 0;
+  color: #dc3545;
+  right: 0;
+  transition-duration: 0.4s;
+}
+
+.toggle-delete:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+}
+@keyframes book-appearing {
+  from {
+    opacity: 0;
+    transform: translateX(+100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes fade-in {
+  from {
+    background-color: rgba(0,0,0,0);
+  }
+
+  to {
+    background-color: rgba(0,0,0,0.4);
+  }
+}
+@keyframes fade-out {
+  from {
+    background-color: rgba(0,0,0,0.4);
+  }
+
+  to {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+@keyframes form-appearing {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes form-hiding {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100vh);
+  }
+}
+@keyframes nope {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(15%);
+  }
+
+  65% {
+    transform: translateX(-15%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes form-fields {
+  from {
+    opacity: 0;
+    transform: translateX(-35%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .book-item {
+    margin: 2em 1em 0;
+    width: 45%;
+  }
+
+  .book-cover {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .book-item {
+    margin: 2em auto 0;
+    width: 80%;
+  }
+
+  .book-cover {
+    width: 100%;
+  }
 }
