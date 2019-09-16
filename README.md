@@ -4,8 +4,10 @@
 
 This project mimics a library using pure javascript that manipulates the Dom.
 
-####Features
+#### Features
 * Add Books to Library
 * Edit read status
 * Delete Books from Library
 * Books add save to a database
+
+#### [Live link](https://torres-ssf.github.io/javascript-library/)
